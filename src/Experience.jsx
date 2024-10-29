@@ -38,7 +38,7 @@ const Experience = () => {
     <div className="h-screen">
       <Canvas className="w-full  bg-black ">
         <ScrollControls damping={2} pages={4}>
-          <ambientLight intensity={0.2} />
+          <ambientLight intensity={0.02} />
           <group>
             <group position={[0.3, 0, 0]}>
               <Stone
@@ -65,14 +65,14 @@ const Experience = () => {
           <HtmlElement isMobile={isMobile} />
           <directionalLight
             position={[0, 9, -1]} // Position above the scene
-            intensity={0.2} // Adjust intensity as needed
+            intensity={0.1} // Adjust intensity as needed
             color={"red"}
             castShadow // Optional: Enable shadow casting
           />
           <directionalLight
             lookAt={[0, 0, 0]}
             position={[0, -14, 0]} // Position above the scene
-            intensity={0.9} // Adjust intensity as needed
+            intensity={0.8} // Adjust intensity as needed
             color={"white"}
             castShadow
           />
@@ -83,10 +83,10 @@ const Experience = () => {
           {/* <Environment preset="city" /> */}
           {/* <OrbitControls /> */}
 
-          {/* <Efect /> */}
+          <Efect />
           <Stars fade count={1000} factor={4} speed={0.6} saturation={13} />
 
-          <Sparkles scale={[3, 18, 0]} size={1.5} count={50} />
+          <Sparkles scale={[3, 18, 0]} size={.5} count={50} />
         </ScrollControls>
       </Canvas>
     </div>

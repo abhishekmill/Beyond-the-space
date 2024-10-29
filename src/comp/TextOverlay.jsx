@@ -6,7 +6,7 @@ import { degToRad } from "three/src/math/MathUtils.js";
 
 const ImgOverlay = ({ isMobile }) => {
   const imgRef = useRef();
-  const position = isMobile ? [9, 25, -5] : [16, 27, -7];
+  const position = isMobile ? [7.6, 27, -5] : [16, 27, -7];
 
   useEffect(() => {
     if (imgRef.current) {

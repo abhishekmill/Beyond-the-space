@@ -14,7 +14,7 @@ const HtmlElement = ({ isMobile }) => {
 
   const handleScroll = () => {
     if (isMobile) {
-      if (scrollx >= 200 && scrollx <= 1500 && cardOpacity <= 1) {
+      if (scrollx >= 200 && scrollx <= 1300 && cardOpacity <= 1) {
         setCardOpacity(cardOpacity + scrollx / 7000);
       } else if (cardOpacity > 0) {
         setCardOpacity(cardOpacity - scrollx / 10000);
@@ -64,23 +64,22 @@ const HtmlElement = ({ isMobile }) => {
         ref={cardref}
         className=" gap-10 mt-[70vh] flex flex-col  md:opacity-0 opacity-100 "
       >
-        <h2 className="h-fit   text-white text-center font-bebas-neue tracking-widest text-4xl md:pb-10  ">
+        <h2 className="h-fit   text-slate-200 text-center font-bebas-neue tracking-widest text-4xl md:pb-10  ">
           Abhishek-Verma
         </h2>
         <div className="flex h-fit gap-10  md:flex-row  flex-col px-5 justify-evenly">
-          <div className="border shadow-yellow-200 md:bg-transparent bg-opacity-55 text-white     max-w-[500px] rounded-lg  max-h-[300px]">
+          <div className="border shadow-yellow-200 md:bg-transparent bg-opacity-55 text-slate-200     max-w-[500px] rounded-lg  max-h-[300px]">
             <div>
               <h1 className="font-bebas-neue h-fit text-red-600 md:text-4xl text-xl p-2 md:p-3   tracking-widest text-center border-b">
                 Tech-Stack
               </h1>
               <p className="md:h-fit max-h-32 h-fit   overflow-hidden  md:p-5 p-2 ">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Voluptatem nesciunt culpa blanditiis iure impedit ad nulla qui
-                labore, nisi cum sunt.
+                Voluptatem nesciunt
               </p>
             </div>
           </div>
-          <div className="border shadow-yellow-200   md:bg-transparent bg-opacity-55   text-white max-w-[500px] rounded-lg  max-h-[300px]">
+          <div className="border shadow-yellow-200   md:bg-transparent bg-opacity-55   text-slate-200 max-w-[500px] rounded-lg  max-h-[300px]">
             <div>
               <h1 className="font-bebas-neue h-fit text-red-600 md:text-4xl text-xl p-2 md:p-3   tracking-widest text-center border-b">
                 projects
@@ -94,19 +93,18 @@ const HtmlElement = ({ isMobile }) => {
         </div>
 
         <div className="flex h-fit gap-10  md:flex-row  flex-col px-5 justify-evenly">
-          <div className="border shadow-yellow-200   md:bg-transparent bg-opacity-55   text-white max-w-[500px] rounded-lg  max-h-[300px] ">
+          <div className="border shadow-yellow-200   md:bg-transparent bg-opacity-55   text-slate-200 max-w-[500px] rounded-lg  max-h-[300px] ">
             <div>
               <h1 className="font-bebas-neue h-fit text-yellow-400 md:text-4xl text-xl p-2 md:p-3   tracking-widest text-center border-b">
                 Skills
               </h1>
               <p className="md:h-fit max-h-32 h-fit   overflow-hidden  md:p-5 p-2">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Voluptatem nesciunt culpa blanditiis iure impedit ad nulla qui
-                labore, nisi cum sunt
+                Voluptatem nesciunt culpa blanditiis iure impedit ad
               </p>
             </div>
           </div>
-          <div className="border  shadow-yellow-200   md:bg-transparent bg-opacity-55    text-white max-w-[500px] rounded-lg  max-h-[300px]">
+          <div className="border  shadow-yellow-200   md:bg-transparent bg-opacity-55    text-slate-200 max-w-[500px] rounded-lg  max-h-[300px]">
             <div>
               <h1 className="font-bebas-neue h-fit text-yellow-400 md:text-4xl text-xl p-2 md:p-3   tracking-widest text-center border-b">
                 Socials

@@ -1,4 +1,10 @@
-import { Html, ScrollControls, Text, useScroll } from "@react-three/drei";
+import {
+  Html,
+  Scroll,
+  ScrollControls,
+  Text,
+  useScroll,
+} from "@react-three/drei";
 import { useThree, useFrame, useLoader } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import { TextureLoader } from "three";
@@ -34,6 +40,7 @@ export function BallLight() {
 
       camera.position.z = distanceFactor;
       camera.updateProjectionMatrix();
+      console.log(-12 + distanceFactor);
 
       if (Math.abs(distanceFactor - targetFactor) > 0.01) {
         animationFrame = requestAnimationFrame(animateDistance);
@@ -48,6 +55,16 @@ export function BallLight() {
     <>
       {/* Point light to illuminate the scene */}
       <ScrollControls>
+        <Scroll html>
+          <div
+            className=" text-yellow-600 tracking-wider font-bebas-neue text-center text-3xl mt-[70vh] w-full h-screen capitalize"
+            style={{
+              opacity: -11 + distanceFactor,
+            }}
+          >
+            End is Near
+          </div>
+        </Scroll>
         <pointLight
           position={[0, amountScroll, 0]}
           intensity={5}

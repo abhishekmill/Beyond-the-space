@@ -4,8 +4,8 @@ import React from "react";
 const Efect = () => {
   return (
     <EffectComposer>
-      <Vignette darkness={0.5} />
-      <Bloom />
+      <Vignette darkness={0.34} />
+      <Bloom intensity={0.2} />
     </EffectComposer>
   );
 };

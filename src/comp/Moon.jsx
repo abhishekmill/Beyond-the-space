@@ -21,8 +21,8 @@ export function Moon(props) {
       <group
         {...props}
         ref={moonRef}
-        scale={[0.002, 0.002, 0.002]}
-        position={[0, -15, 0]}
+        scale={[0.003, 0.003, 0.003]}
+        position={[0, -16, 0]}
         dispose={null}
       >
         <mesh
