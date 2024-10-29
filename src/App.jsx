@@ -3,7 +3,11 @@ import Experience from "./Experience";
 import { ScrollTrigger } from "gsap/all";
 
 const App = () => {
-  return <Experience />;
+  return (
+    <>
+      <Experience />
+    </>
+  );
 };
 
 export default App;

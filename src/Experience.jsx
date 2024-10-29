@@ -1,5 +1,6 @@
 import {
   Environment,
+  Html,
   OrbitControls,
   Plane,
   ScrollControls,
@@ -10,7 +11,7 @@ import {
   Text3D,
 } from "@react-three/drei";
 import { Canvas, useLoader, useThree } from "@react-three/fiber";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Stone } from "./comp/Stone";
 import { degToRad } from "three/src/math/MathUtils.js";
 import { BallLight } from "./comp/BallLight";
@@ -19,10 +20,22 @@ import { Moon } from "./comp/Moon";
 import ImgOverlay from "./comp/TextOverlay";
 import HtmlElement from "./comp/HtmlElement";
 const Experience = () => {
-  const scrollContainerRef = useRef();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
+
+    const handleResize = () => setIsMobile(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleResize);
+
+    return () => mediaQuery.removeEventListener("change", handleResize);
+  }, []);
+
+  console.log(isMobile);
 
   return (
-    <div ref={scrollContainerRef} className="h-screen">
+    <div className="h-screen">
       <Canvas className="w-full  bg-black ">
         <ScrollControls damping={2} pages={4}>
           <ambientLight intensity={0.2} />
@@ -49,7 +62,7 @@ const Experience = () => {
             </group>
           </group>
           {/* <TextOverlay /> */}
-          <HtmlElement />
+          <HtmlElement isMobile={isMobile} />
           <directionalLight
             position={[0, 9, -1]} // Position above the scene
             intensity={0.2} // Adjust intensity as needed
@@ -65,22 +78,16 @@ const Experience = () => {
           />
 
           <BallLight />
-          <ImgOverlay />
+          <ImgOverlay isMobile={isMobile} />
           <Moon />
           {/* <Environment preset="city" /> */}
           {/* <OrbitControls /> */}
-          {/* <mesh position={[0, 0, -5]} scale={[30, 30, 0]}>
-            <planeGeometry />
 
-            <meshStandardMaterial />
-          </mesh> */}
           {/* <Efect /> */}
+          <Stars fade count={1000} factor={4} speed={0.6} saturation={13} />
+
           <Sparkles scale={[3, 18, 0]} size={1.5} count={50} />
         </ScrollControls>
-        {/* <Background /> */}
-        <Stars fade count={1000}
-        factor={4} speed={.6} saturation={13}
-        />
       </Canvas>
     </div>
   );

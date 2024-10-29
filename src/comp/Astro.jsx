@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
+import { useGLTF, useAnimations, Html, useScroll } from "@react-three/drei";
+import { degToRad } from "three/src/math/MathUtils.js";
+import { useFrame } from "@react-three/fiber";
 
 export function Astronaut(props) {
   const group = useRef();
@@ -12,6 +14,8 @@ export function Astronaut(props) {
       actions[animations[0].name].play();
     }
   }, [actions, animations]);
+
+
 
   return (
     <group ref={group} {...props} dispose={null}>
@@ -29,6 +33,9 @@ export function Astronaut(props) {
               <group name="RootNode">
                 <group name="Object_4">
                   <primitive object={nodes._rootJoint} />
+
+                
+
                   <skinnedMesh
                     name="Object_7"
                     geometry={nodes.Object_7.geometry}
