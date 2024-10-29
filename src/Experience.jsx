@@ -1,8 +1,11 @@
 import {
   Environment,
   OrbitControls,
+  Plane,
   ScrollControls,
   Sparkles,
+  Sphere,
+  Stars,
   Text,
   Text3D,
 } from "@react-three/drei";
@@ -13,7 +16,7 @@ import { degToRad } from "three/src/math/MathUtils.js";
 import { BallLight } from "./comp/BallLight";
 import Efect from "./comp/Efect";
 import { Moon } from "./comp/Moon";
-import TextOverlay from "./comp/TextOverlay";
+import ImgOverlay from "./comp/TextOverlay";
 import HtmlElement from "./comp/HtmlElement";
 const Experience = () => {
   const scrollContainerRef = useRef();
@@ -21,7 +24,7 @@ const Experience = () => {
   return (
     <div ref={scrollContainerRef} className="h-screen">
       <Canvas className="w-full  bg-black ">
-        <ScrollControls damping={1.4} pages={4}>
+        <ScrollControls damping={2} pages={4}>
           <ambientLight intensity={0.2} />
           <group>
             <group position={[0.3, 0, 0]}>
@@ -45,7 +48,7 @@ const Experience = () => {
               />
             </group>
           </group>
-          <TextOverlay />
+          {/* <TextOverlay /> */}
           <HtmlElement />
           <directionalLight
             position={[0, 9, -1]} // Position above the scene
@@ -62,6 +65,7 @@ const Experience = () => {
           />
 
           <BallLight />
+          <ImgOverlay />
           <Moon />
           {/* <Environment preset="city" /> */}
           {/* <OrbitControls /> */}
@@ -73,9 +77,23 @@ const Experience = () => {
           {/* <Efect /> */}
           <Sparkles scale={[3, 18, 0]} size={1.5} count={50} />
         </ScrollControls>
+        {/* <Background /> */}
+        <Stars fade count={1000}
+        factor={4} speed={.6} saturation={13}
+        />
       </Canvas>
     </div>
   );
 };
 
 export default Experience;
+
+// function Background() {
+//   const THREE = useThree();
+//   const texture = useLoader(THREE.TextureLoader, spaceTexture);
+//   return (
+//     <Sphere args={[100, 64, 64]} scale={[-1, 1, 1]}>
+//       <meshBasicMaterial map={texture} side={THREE.BackSide} />
+//     </Sphere>
+//   );
+// }

@@ -1,37 +1,24 @@
-import { Text, useScroll } from "@react-three/drei";
-import React, { useEffect } from "react";
+import { Image, Text, useScroll } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { button, Leva, useControls } from "leva";
+import React, { useEffect, useState } from "react";
+import { degToRad } from "three/src/math/MathUtils.js";
 
-const TextOverlay = () => {
+const ImgOverlay = () => {
   const scroll = useScroll();
-  console.log(scroll.offset);
-
-
-  useEffect
 
   return (
     <group>
-      <Text
-        position={[0, 22, 0]}
-        fontSize={1}
-        color="red"
-        maxWidth={200}
-        lineHeight={1.5}
-      >
-        {" "}
-        Abhi shek
-      </Text>
-      <Text
-        position={[0, 21, 0]}
-        fontSize={1}
-        color="blue"
-        maxWidth={200}
-        lineHeight={1.5}
-      >
-        {" "}
-        is Here
-      </Text>
+      <Image
+        rotation={[degToRad(0), degToRad(0), degToRad(130)]}
+        url="./earthAe.png"
+        opacity={1}
+        transparent
+        scale={[28, 17, 0]}
+        position={[16, 27, -7]}
+      />
     </group>
   );
 };
 
-export default TextOverlay;
+export default ImgOverlay;
