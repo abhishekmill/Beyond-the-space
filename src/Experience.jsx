@@ -32,7 +32,7 @@ const Experience = () => {
     return () => mediaQuery.removeEventListener("change", handleResize);
   }, []);
 
-  console.log(isMobile);
+  // console.log(isMobile);
 
   return (
     <div className="h-screen">
@@ -86,7 +86,7 @@ const Experience = () => {
           <Efect />
           <Stars fade count={1000} factor={4} speed={0.6} saturation={13} />
 
-          <Sparkles scale={[3, 18, 0]} size={.5} count={50} />
+          <Sparkles scale={[3, 18, 0]} size={0.5} count={50} />
         </ScrollControls>
       </Canvas>
     </div>

@@ -40,7 +40,7 @@ export function BallLight() {
 
       camera.position.z = distanceFactor;
       camera.updateProjectionMatrix();
-      console.log(-12 + distanceFactor);
+      // console.log(-12 + distanceFactor);
 
       if (Math.abs(distanceFactor - targetFactor) > 0.01) {
         animationFrame = requestAnimationFrame(animateDistance);
