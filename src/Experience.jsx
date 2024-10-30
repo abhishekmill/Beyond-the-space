@@ -83,7 +83,7 @@ const Experience = () => {
           {/* <Environment preset="city" /> */}
           {/* <OrbitControls /> */}
 
-          <Efect />
+          {/* <Efect /> */}
           <Stars fade count={1000} factor={4} speed={0.6} saturation={13} />
 
           <Sparkles scale={[3, 18, 0]} size={0.5} count={50} />
