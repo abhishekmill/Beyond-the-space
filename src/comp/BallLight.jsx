@@ -83,7 +83,7 @@ export function BallLight() {
           position={[0, amountScroll, 0]}
           intensity={5}
           distance={8}
-          color="#a6d5fc"
+          color="blue"
           castShadow
         />
 
