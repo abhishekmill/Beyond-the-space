@@ -6,6 +6,7 @@ import {
   ScrollControls,
   Sparkles,
   Sphere,
+  Stage,
   Stars,
   Text,
   Text3D,
@@ -19,6 +20,7 @@ import Efect from "./comp/Efect";
 import { Moon } from "./comp/Moon";
 import ImgOverlay from "./comp/TextOverlay";
 import HtmlElement from "./comp/HtmlElement";
+import Preloader from "./comp/Preloader";
 const Experience = () => {
   const [isMobile, setIsMobile] = useState(false);
 

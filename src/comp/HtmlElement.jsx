@@ -33,7 +33,7 @@ const HtmlElement = ({ isMobile }) => {
 
   return (
     <Scroll html>
-      <div className="bg-transparent text-white justify-center w-full font-bebas-neue flex absolute z-10">
+      <div className="bg-transparent text-white justify-center  font-bebas-neue flex  w-[100vw] h-screen absolute z-10">
         <div
           className=" w-fit  md:text-3xl  text-xl  h-fit pl-5  mt-[36vh] justify-center items-center flex  tracking-widest  "
           style={{
@@ -41,7 +41,7 @@ const HtmlElement = ({ isMobile }) => {
           }}
         >
           {" "}
-          Mern Academy Presents{" "}
+          When Developer's Meet Space{" "}
         </div>
 
         <div
@@ -62,7 +62,7 @@ const HtmlElement = ({ isMobile }) => {
       {/* cards start */}
       <div
         ref={cardref}
-        className=" gap-10 mt-[70vh] flex flex-col  md:opacity-0 opacity-100 "
+        className=" gap-10 mt-[70vh] w-[100vw] h-screen flex flex-col  md:opacity-0 opacity-100 "
       >
         <h2 className="h-fit   text-slate-200 text-center font-bebas-neue tracking-widest text-4xl md:pb-10  ">
           Abhishek-Verma
