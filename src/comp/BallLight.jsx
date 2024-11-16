@@ -57,7 +57,7 @@ export function BallLight() {
       <ScrollControls>
         <Scroll html>
           <div
-            className=" text-yellow-600 tracking-wider font-bebas-neue text-center text-3xl mt-[70vh] w-full h-screen capitalize"
+            className=" text-yellow-600 tracking-wider font-bebas-neue text-center text-3xl mt-[70vh] w-[100vw] h-screen capitalize"
             style={{
               opacity: -11 + distanceFactor,
             }}

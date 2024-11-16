@@ -125,9 +125,9 @@ const HtmlElement = ({ isMobile }) => {
 
 export default HtmlElement;
 
-const Portolio = () => {
+const Portfolio = () => {
   return (
-    <div className="   w-full  flex  flex-col ">
+    <div className="   w-[]  flex  flex-col ">
       <div className="flex h-fit justify-evenly gap-36">
         <div className="max-w-96 h-48 border"></div>
         <div className="max-w-96 h-48 border"></div>
