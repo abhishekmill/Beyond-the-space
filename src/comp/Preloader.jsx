@@ -93,7 +93,7 @@ const Preloader = () => {
   return (
     <div
       ref={loaderRef}
-      className="fixed inset-0 flex flex-col items-center  justify-center bg-transparent z-50 loader"
+      className="fixed pointer-events-none inset-0 flex flex-col items-center  justify-center bg-transparent z-50 loader"
     >
       {/* Sequentially animated text elements */}
       <div

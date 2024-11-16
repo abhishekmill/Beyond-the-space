@@ -1,15 +1,9 @@
 import {
-  Environment,
-  Html,
-  OrbitControls,
-  Plane,
+  Box,
+  MeshDistortMaterial,
   ScrollControls,
   Sparkles,
-  Sphere,
-  Stage,
   Stars,
-  Text,
-  Text3D,
 } from "@react-three/drei";
 import { Canvas, useLoader, useThree } from "@react-three/fiber";
 import React, { useEffect, useRef, useState } from "react";
@@ -20,7 +14,7 @@ import Efect from "./comp/Efect";
 import { Moon } from "./comp/Moon";
 import ImgOverlay from "./comp/TextOverlay";
 import HtmlElement from "./comp/HtmlElement";
-import Preloader from "./comp/Preloader";
+import { OrbitControls } from "three-stdlib";
 const Experience = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -63,7 +57,26 @@ const Experience = () => {
               />
             </group>
           </group>
-          {/* <TextOverlay /> */}
+
+          <group scale={0.1}>
+            <Stone
+              rotation={[degToRad(0), degToRad(0), degToRad(0)]}
+              position={[5, 1, 10]}
+            />
+            <pointLight position={[-3, 5]} />
+            <Stone
+              rotation={[degToRad(0), degToRad(10), degToRad(40)]}
+              position={[-3,-70, 30]}
+            />
+            <Stone
+              rotation={[degToRad(0), degToRad(10), degToRad(-40)]}
+              position={[6,150, 20]}
+            />
+            <Stone
+              rotation={[degToRad(0), degToRad(10), degToRad(-0)]}
+              position={[-6,170, 20]}
+            />
+          </group>
           <HtmlElement isMobile={isMobile} />
           <directionalLight
             position={[0, 9, -1]} // Position above the scene
@@ -78,16 +91,17 @@ const Experience = () => {
             color={"white"}
             castShadow
           />
-
           <BallLight />
           <ImgOverlay isMobile={isMobile} />
+          {/* <mesh rotation={[Math.PI / 2, 0, 0]}>
+            <torusGeometry args={[1,.1]} />
+            <MeshDistortMaterial speed={3} color={'yellow'} />
+          </mesh> */}
           <Moon />
           {/* <Environment preset="city" /> */}
           {/* <OrbitControls /> */}
-
           {/* <Efect /> */}
           <Stars fade count={1000} factor={4} speed={0.6} saturation={13} />
-
           <Sparkles scale={[3, 18, 0]} size={0.5} count={50} />
         </ScrollControls>
       </Canvas>

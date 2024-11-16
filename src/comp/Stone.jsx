@@ -9,7 +9,7 @@ export function Stone(props) {
   materials.material_0.roughness = 0.8; // Optional: Decrease roughness for a more reflective surface
 
   return (
-    <group {...props} dispose={null} scale={[0.01, 0.02, .01]}>
+    <group {...props} dispose={null} scale={[0.01, 0.02, 0.01]}>
       <mesh
         castShadow
         receiveShadow

@@ -33,7 +33,7 @@ const HtmlElement = ({ isMobile }) => {
 
   return (
     <Scroll html>
-      <div className="bg-transparent text-white justify-center  font-bebas-neue flex  w-[100vw] h-screen absolute z-10">
+      <div className="bg-transparent text-white justify-center pointer-events-none  font-bebas-neue flex  w-[100vw] h-screen absolute z-10">
         <div
           className=" w-fit  md:text-3xl  text-xl  h-fit pl-5  mt-[36vh] justify-center items-center flex  tracking-widest  "
           style={{

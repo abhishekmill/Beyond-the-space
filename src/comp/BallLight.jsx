@@ -16,18 +16,28 @@ export function BallLight() {
   const { camera } = useThree();
   const [amountScroll, setAmountScroll] = useState(-1);
   const [distanceFactor, setDistanceFactor] = useState(3);
+  const targetY = useRef(18);
+  const lerpFactor = 0.1;
 
-  // camera.position.z = 3;
   useFrame(() => {
-    camera.position.y = 22 - scroll.offset * 33;
-    camera.lookAt(0, 22 - scroll.offset * 33, 0);
-    setAmountScroll(22 - scroll.offset * 33);
+    const newY = 18 - scroll.offset * 33;
+    targetY.current += (newY - targetY.current) * lerpFactor;
+    camera.position.y = targetY.current;
+    camera.lookAt(0, targetY.current, 0);
+    setAmountScroll(targetY.current);
+
+    if (true) {
+      const targetRotationZ = degToRad(scroll.offset * 10 * 180);
+      camera.rotation.z += (targetRotationZ - camera.rotation.z) * 0.1;
+      // camera.rotation.z += degToRad(180);
+    }
+
     camera.updateProjectionMatrix();
   });
   useEffect(() => {
     let animationFrame;
 
-    const targetFactor = scroll.offset * 10 > 3 ? 3 + scroll.offset * 10 : 3;
+    const targetFactor = scroll.offset * 7 > 3 ? 3 + scroll.offset * 7 : 3;
     const animateDistance = () => {
       setDistanceFactor((prev) => {
         const step = 0.01; // Adjust step for smoothness
@@ -39,7 +49,7 @@ export function BallLight() {
       });
 
       camera.position.z = distanceFactor;
-      camera.updateProjectionMatrix();
+      // camera.updateProjectionMatrix();
       // console.log(-12 + distanceFactor);
 
       if (Math.abs(distanceFactor - targetFactor) > 0.01) {
@@ -57,12 +67,16 @@ export function BallLight() {
       <ScrollControls>
         <Scroll html>
           <div
-            className=" text-yellow-600 tracking-wider font-bebas-neue text-center text-3xl mt-[70vh] w-[100vw] h-screen capitalize"
+            className=" text-yellow-600 tracking-wider pointer-events-none font-bebas-neue text-center text-3xl mt-[70vh] w-[100vw] h-screen capitalize"
             style={{
-              opacity: -11 + distanceFactor,
+              opacity: -9 + distanceFactor,
             }}
           >
-            End is Near
+            "Building the web, one line at a time.
+            <div className="w-full font-sans  text-sm text-white h-10">
+              <span>github.com/abhishekmill </span>
+              <span>linkedin.com/in/abhishekmill</span>
+            </div>
           </div>
         </Scroll>
         <pointLight
