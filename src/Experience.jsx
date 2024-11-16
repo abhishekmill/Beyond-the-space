@@ -15,6 +15,7 @@ import { Moon } from "./comp/Moon";
 import ImgOverlay from "./comp/TextOverlay";
 import HtmlElement from "./comp/HtmlElement";
 import { OrbitControls } from "three-stdlib";
+import Sound from "./comp/Sound";
 const Experience = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -28,12 +29,17 @@ const Experience = () => {
     return () => mediaQuery.removeEventListener("change", handleResize);
   }, []);
 
-  // console.log(isMobile);
-
+  const [isplaying, stIsplaying] = useState(false);
   return (
     <div className="h-screen">
-      <Canvas className="w-full  bg-black ">
+      <Canvas
+        onScroll={() => {
+          stIsplaying(true);
+        }}
+        className="w-full  bg-black "
+      >
         <ScrollControls damping={2} pages={4}>
+          {/* <Sound soundUrl={"./space.mp3"} isPlaying={isplaying} /> */}
           <ambientLight intensity={0.02} />
           <group>
             <group position={[0.3, 0, 0]}>
@@ -57,7 +63,6 @@ const Experience = () => {
               />
             </group>
           </group>
-
           <group scale={0.1}>
             <Stone
               rotation={[degToRad(0), degToRad(0), degToRad(0)]}
@@ -66,15 +71,15 @@ const Experience = () => {
             <pointLight position={[-3, 5]} />
             <Stone
               rotation={[degToRad(0), degToRad(10), degToRad(40)]}
-              position={[-3,-70, 30]}
+              position={[-3, -70, 30]}
             />
             <Stone
               rotation={[degToRad(0), degToRad(10), degToRad(-40)]}
-              position={[6,150, 20]}
+              position={[6, 150, 20]}
             />
             <Stone
               rotation={[degToRad(0), degToRad(10), degToRad(-0)]}
-              position={[-6,170, 20]}
+              position={[-6, 170, 20]}
             />
           </group>
           <HtmlElement isMobile={isMobile} />
