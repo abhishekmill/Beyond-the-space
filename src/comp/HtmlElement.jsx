@@ -26,7 +26,9 @@ const HtmlElement = ({ isMobile }) => {
     }
   };
   useEffect(() => {
-    cardref.current.style.opacity = cardOpacity;
+    if (cardref.current) {
+      cardref.current.style.opacity = cardOpacity;
+    }
     handleScroll();
     // console.log(scrollx);
   }, [scrollx]);
@@ -127,7 +129,7 @@ export default HtmlElement;
 
 const Portfolio = () => {
   return (
-    <div className="   w-[]  flex  flex-col ">
+    <div className="w-full flex flex-col">
       <div className="flex h-fit justify-evenly gap-36">
         <div className="max-w-96 h-48 border"></div>
         <div className="max-w-96 h-48 border"></div>
